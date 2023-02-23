@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { StyleSheet } from 'react-native';
 import { Content, Button, Text, Form, Item, Input, Label } from 'native-base';
-import { login } from '../actions/auth/actions';
+import { login } from '../actions/authActions';
 
 export default function LoginScreen() {
     const dispatch = useDispatch();

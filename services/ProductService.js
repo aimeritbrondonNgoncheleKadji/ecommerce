@@ -1,8 +1,10 @@
-import firebase from '../firebase';
+import { firestore } from './firebase';
+import { collection, getDocs, getDoc } from "firebase/firestore";
 
 class ProductService {
     async getProducts() {
-        const querySnapshot = await firebase.firestore().collection('products').get();
+
+        const querySnapshot = await getDocs(collection(firestore, 'products'));
         const products = [];
         querySnapshot.forEach((doc) => {
             products.push({ id: doc.id, ...doc.data() });
@@ -11,6 +13,7 @@ class ProductService {
     }
 
     async getProductId(id) {
+        (await getDoc(collection(firestore, 'products', "")))
         const product = await firebase.firestore().collection('products').doc(id).get();
         return { id: product.id, ...product.data() };
     }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { StyleSheet } from 'react-native';
 import { Content, Button, Text, Form, Item, Input, Label } from 'native-base';
-import { register } from '../actions/auth/actions';
+import { register } from '../actions/authActions';
 
 export default function RegisterScreen() {
     const dispatch = useDispatch();
